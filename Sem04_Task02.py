@@ -16,4 +16,4 @@ def prime_factors(n):
 
 
 n = int(input('Введите натуральное число: '))
-print(prime_factors(n))
+print(f'{prime_factors(n)} - список простых множителей числа {n}')
