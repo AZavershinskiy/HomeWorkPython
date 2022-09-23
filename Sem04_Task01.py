@@ -5,6 +5,10 @@
 from math import pi
 
 
-d = input('Задайте точность определения числа Пи (например: 0.01): ')
-text = str(pi)
-print(f'{float(text[:len(d)])} - число Пи без округления')
+def precision_calculation_pi(d):
+    text = str(pi)
+    return float(text[:len(d)])
+
+
+d = input('Задайте точность определения числа Пи (например: 0.001): ')
+print(f'{precision_calculation_pi(d)} - вычисленное число Пи без округления с точностью: {d}')
