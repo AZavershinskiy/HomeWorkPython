@@ -5,7 +5,7 @@ def Dec_To_Bin(dec):
     bin = ''
     while dec > 0:
         bin = str(dec % 2) + bin
-        dec = dec // 2
+        dec //= 2
     return bin
 
 
