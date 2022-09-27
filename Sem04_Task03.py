@@ -3,9 +3,6 @@
 
 # [1, 1, 2, 3, 4, 5, 5] -> [2, 3, 4]
 
-from itertools import count
-from random import randint
-
 
 def unique_elements(nums_list):
     result_list = []
