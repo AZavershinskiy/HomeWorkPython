@@ -8,6 +8,6 @@ def word_deleter(str1, str2):
 
 
 initial_str = input('Введите предложение из нескольких слов: ')
-word_delete = input('Введите слово, которое нужно удалить из предложения: ')
+word_delete = input('Введите слово или часть слова, которое нужно удалить из предложения: ')
 
 print(f'"{word_deleter(initial_str, word_delete)}" <- предложение без удаленного слова')
