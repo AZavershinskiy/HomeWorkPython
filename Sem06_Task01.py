@@ -16,8 +16,7 @@ print(f'{list_nums} - получившийся список')
 print(f'{Sum_Odd_Nums(list_nums)} - сумма элементов списка нечетных позиций')
  """
 
-# List comprehension
-user_list = [int(i) for i in input(
-    'Введите список из нескольких чисел через пробел: ').split()]
-res = sum([user_list[i] for i in range(1, len(user_list), 2)])
-print(f'{res} - сумма элементов списка нечетных позиций')
+# list comprehension
+user_list = [1, 2, 3, 4, 5]
+res = sum([user_list[i] for i in range(0, len(user_list), 2)])
+print(f'{res} -> сумма элементов списка: {user_list}, - на нечетных позициях')
