@@ -16,7 +16,7 @@ nums_list = [1, 1, 2, 3, 4, 5, 5]
 print(unique_elements(nums_list))
  """
 
-# list filter
+# list filter and lambda
 nums_list = [1, 1, 2, 3, 4, 5, 5]
 result = list(filter(lambda i: nums_list.count(i) == 1, nums_list))
 print(result)
