@@ -97,7 +97,8 @@ while sweets > 0:
         else:
             AI_turn = player_turn(
                 user_1 if choice_move else user_2, sweets, difficulty)
-        print(f'Ход ИИ: {AI_turn}')
+        if not(choice_move):
+            print(f'Ход ИИ: {AI_turn}')
         sweets -= AI_turn
     else:
         sweets -= player_turn(user_1 if choice_move else user_2, sweets)
