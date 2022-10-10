@@ -43,8 +43,8 @@ def adding_data_to_the_database_csv(user_dict, check_file, path, fieldnames):
             name_dict_writer.writerow(i)
 
 
-def export_file_txt(file_name, path_file, users, fieldnames):
-    with open(f'{path_file}/{file_name}', 'a') as txtfile:
+def export_file_txt(file_name, users, fieldnames):
+    with open(f'Phonebook/{file_name}.txt', 'a') as txtfile:
         for i in range(len(users)):
             if i == 0:
                 txtfile.writelines(f'{fieldnames}\n')

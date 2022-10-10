@@ -7,7 +7,6 @@ def user_dictionary(check: bool,
                     new_second_name,
                     new_phone_number,
                     new_note):
-
     if not (check):
         id = 1
     else:
@@ -18,10 +17,7 @@ def user_dictionary(check: bool,
              'Примечание': '-' if new_note == '' else new_note}]
 
 
-def find_user(name_reader,
-              user,
-              key,
-              dict_fieldnames):
+def find_user(name_reader, user, key, dict_fieldnames):
     user_list = []
     for i in name_reader:
         if user in i[dict_fieldnames[key]]:
@@ -56,7 +52,6 @@ def get_id_user(searched_users, fieldnames):
         id_user = view.data_request('Укажите id пользователя: ')
     elif len(searched_users) == 0:
         print('Пользователи не найдены')
-        return
     return id_user
 
 

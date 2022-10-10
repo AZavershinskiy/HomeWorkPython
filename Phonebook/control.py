@@ -12,7 +12,7 @@ def work(path, dict_fieldnames, fieldnames):
     3 - Редактирование пользователя
     4 - Удаление пользователя
     5 - Вывод всех пользователей
-    6 - Экспорт базы в .txt
+    6 - Экспорт базы в *.txt
     7 - Импорт базы
     8 - Выход
 Введите действие которое хотите выполнить: ''')
@@ -53,7 +53,7 @@ def edit_user(path, dict_fieldnames, fieldnames):
     search_field = int(view.data_request(
         'Введите поле для поиска (1 - Имя, 2 - Фамилия, 3 - Телефон, 4 - Примечание): '))
     what_to_edit = list(map(int, view.data_request('Введите через пробел что хотите редактировать '
-                                                   '(1 - Имя, 2 - Фамилия, 3 - Телефон, 4 - Примечание, 5 - все поля): ').split()))
+                                                   '(1 - Имя, 2 - Фамилия, 3 - Телефон, 4 - Примечание, 5 - Все поля): ').split()))
     users = db.read_file_csv(path)
     searched_users = contact_handler.find_user(
         users, user, search_field, dict_fieldnames)
@@ -100,12 +100,13 @@ def import_file(path, dict_fieldnames, fieldnames):
     for i in new_user_list_dict:
         user_list = db.read_file_csv(path)
         user_dict = contact_handler.user_dictionary(check_file,
-                                                    user_list, 
-                                                    i[dict_fieldnames[1]], 
-                                                    i[dict_fieldnames[2]], 
-                                                    i[dict_fieldnames[3]], 
+                                                    user_list,
+                                                    i[dict_fieldnames[1]],
+                                                    i[dict_fieldnames[2]],
+                                                    i[dict_fieldnames[3]],
                                                     i[dict_fieldnames[4]])
-        db.adding_data_to_the_database_csv(user_dict, check_file, path, fieldnames)
+        db.adding_data_to_the_database_csv(
+            user_dict, check_file, path, fieldnames)
 
 
 def export_file(path, fieldnames):
@@ -114,6 +115,5 @@ def export_file(path, fieldnames):
     fieldnames_str = contact_handler.data_preparation_fieldnames_in_txt(
         fieldnames)
     name_file = view.data_request('Укажите имя файла: ')
-    path_file = view.data_request(
-        'Укажите путь куда хотите сохранить файл: ').replace('\\', '/')
-    db.export_file_txt(name_file, path_file, user_list, fieldnames_str)
+    path_file = view.data_request('Укажите путь, куда хотите сохранить файл: ').replace('\\', '/')
+    db.export_file_txt(name_file, path_file, user_list)
