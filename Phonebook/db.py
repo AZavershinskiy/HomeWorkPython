@@ -1,4 +1,6 @@
 # data_base
 
+dict_names = {1: 'Firs Name', 2: 'Last Name', 3: 'Phone', 4: 'Note'}
+heading = ['ID', 'Firs Name', 'Last Name', 'Phone', 'Note']
 
-base_contacts = ('phonebook/base.csv')
+file_path = 'phonebook/base.csv'

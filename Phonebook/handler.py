@@ -1,12 +1,18 @@
-from msilib.schema import Control
+from prettytable import prettytable
 import csv
 import db
 
 
 def get_new_id():
-    file = open('phonebook/base.csv')
-    contact_new_id = len(file.readlines())
-    return contact_new_id
+    with open(db.file_path, 'r') as file:
+        contact_new_id = len(file.readlines())
+        return contact_new_id
+
+
+def show_contacts():
+    with open(db.file_path, 'r') as file:
+        table = prettytable.from_csv(file)
+        print(table)
 
 
 def adds_new():
@@ -14,7 +20,32 @@ def adds_new():
     last_name = input('Введите фамилию: ')
     phone = input('Введите телефон: ')
     note = input('Введите примечание к контакту: ')
-    with open(db.base_contacts, mode="a", encoding='utf-8') as w_file:
-        file_writer = csv.writer(w_file, delimiter=";", lineterminator="\r")
+    with open(db.file_path, mode="a", encoding='utf-8') as w_file:
+        file_writer = csv.writer(w_file, delimiter=";")
         file_writer.writerow(
-            [get_new_id(), first_name, last_name, phone, note])
+            [get_new_id(),
+             first_name,
+             last_name,
+             phone, note])
+    print('\nГотово! Контакт добавлен')
+
+
+def finder():
+    with open(db.file_path, 'r') as file:
+        check = input("""Вам известен ID контакта? 
+            1 - ДА
+            2 - НЕТ
+        Ответ: """)
+        if check == '1':
+            search_id = int(input('Введите ID: '))
+            table = prettytable.from_csv(file)
+            table = table.get_string(start=search_id-1, end=search_id)
+            print(table)
+        elif check == '2':
+            search_word = input('Поиск по имени, фамили и др.: ')
+            for row in file:
+                if search_word in row[1:]:
+                    search_id = int(row[0])
+                    table = prettytable.from_csv(file)
+                    table = table.get_string(start=search_id-1, end=search_id)
+                    print(table)

@@ -1,5 +1,4 @@
 import handler
-import view
 
 
 def controller():
@@ -14,10 +13,8 @@ def controller():
 
     Введите номер нужной команды: """)
     if command == '1':
-        print(view.show_contacts())
+        handler.show_contacts()
     elif command == '2':
         handler.adds_new()
     elif command == '3':
-
-
-    
+        handler.finder()
