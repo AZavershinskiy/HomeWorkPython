@@ -1,2 +1,4 @@
-id;Имя;Фамилия;Телефон;Примечание
-1;A;B;+7;-
+ID;Firs Name;Last Name;Phone;Note
+1;Andrey;Zav;+7;Programmer
+2;Ivan;Ivanov;-;Human
+3;Danil;Bodrov;33-15-47;Admin
