@@ -1,6 +1,11 @@
 ID;Firs Name;Last Name;Phone;Note
 1;Andrey;Zav;+7;Programmer
-2;Ivan;Ivanov;-;Human
-3;Danil;Bodrov;-;Admin
+2;Ivan;Ivanov;321;Human
+3;Danil;Bodrov;123;Admin
 4;Denis;WLG;+7123-456-78-90;Contentmaker
-5;Test;Testerov;+0;Tester
+5;Rob;Cop;911;Not human
+6;Six;Ronin;666;Samurai
+7;Seven;Toseven;777;-
+8;Penultimo;Penultin;+564-685-456;Penultimate
+9;Lastimo;Laster;999999999;Last
+10;Тест;Тест;Тест;Тест
