@@ -51,7 +51,7 @@ def finder():
             table = table.get_string(start=search_id-1, end=search_id)
             print(table)
         elif check == '2':
-            search_word = input('\nОбщий поиск: ').lower()
+            search_word = input('\nПоиск: ').lower()
             file.readline()
             for row in file:
                 if search_word in row.lower():
@@ -59,6 +59,6 @@ def finder():
                     table = prettytable.from_csv(file)
                     table = table.get_string(start=search_id-1, end=search_id)
                     print(table)
-                elif not (search_word in row.lower()):
-                    print('Извините! Ничего не найдено\n')
-                    continue
+                # elif not (search_word in row.lower()):
+                #     print('Извините! Ничего не найдено\n')
+                #     continue
