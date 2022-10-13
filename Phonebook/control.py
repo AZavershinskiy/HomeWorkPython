@@ -12,7 +12,7 @@ def controller():
             2 - Добавить новый контакт
             3 - Редактировать контакт
             4 - Найти контакт
-            8 - Выход
+            0 - Выход
         Введите номер нужной команды: """)
         if command == '1':
             handler.show_contacts()
@@ -22,7 +22,7 @@ def controller():
             handler.editor()
         elif command == '4':
             handler.finder()
-        elif command == '8':
+        elif command == '0':
             while True:
                 prog_exit = input("""
                 Завершить программу?
