@@ -62,7 +62,7 @@ def editor():
 
 
 def finder():
-    with open(db.file_path, mode='r', encoding='utf-8') as file:
+    with open(db.file_path, 'r', encoding='utf-8') as file:
         csv.Sniffer().sniff(file.readline())
         answer = input("""Вам известен ID контакта?
             1 - ДА
@@ -73,8 +73,8 @@ def finder():
             table = prettytable.from_csv(file)
             table = table.get_string(start=search_id-1, end=search_id)
             print(table)
-        elif answer == '2':
-            search_word = input('\nПоиск: ').lower()
+        if answer == '2':
+            search_word = input('\nПоиск по всей базе: ').lower()
             for row in file:
                 if search_word in row.lower():
                     search_id = int(row[0])
