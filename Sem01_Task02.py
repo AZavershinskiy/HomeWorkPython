@@ -3,8 +3,11 @@
 
 from random import randint
 
-x = randint(0, 10)
-y = randint(0, 10)
-z = randint(0, 10)
-print(f'¬(X ⋁ Y ⋁ Z) = ¬X ⋀ ¬Y ⋀ ¬Z\nX={x}\nY={y}\nZ={z}')
-print(not (x or y or z) == (not x and not y and not z))
+
+diap = (0, 1)
+for x in diap:
+    for y in diap:
+        for z in diap:
+            left_side = not (x or y or z)
+            right_side = not x and not y and not z
+            print(x, y, z, left_side == right_side)
