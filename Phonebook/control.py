@@ -38,5 +38,3 @@ def controller():
                 if prog_exit != '1' or '2':
                     print('Выберите действие!')
                     continue
-                
-    
