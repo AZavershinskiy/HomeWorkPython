@@ -1,25 +1,26 @@
 # Задайте список из N элементов, заполненных числами из промежутка [-N, N].
-# Найдите произведение элементов на указанных позициях. Позиции хранятся в файле file.txt в одной строке одно число.
+# Найдите произведение элементов на указанных позициях.
+# Позиции хранятся в файле file.txt в одной строке одно число.
 
 
 from random import randint
 
+
+list_positions = []
+with open('Item_positions.txt', 'r') as my_file:
+    for i in my_file:
+        list_positions.append(int(i))
+list_positions.sort()
+print(f'{list_positions} - список позиций элементов из файла '
+      'для нахождения их произведения')
+n_list = []
+for i in range(max(list_positions) + 1):
+    n_list.append(randint(-max(list_positions), max(list_positions)))
+print(f'\n{n_list} - получившийся список')
 res = 1
-list2 = []
-text = input('Введите размер списка затем индексы элементов, '
-             'которые нужно перемножить, через пробел: ').split()
-list = [int(i) for i in text]
-for i in range(-list[0], list[0], 2):
-    list2.append(randint(-list[0], list[0]))
-print(f'{list2} - получившийся список')
-for i in list[1:]:
-    if list[0] <= i:
-        print(
-            f'Ошибка! Введенный индекс со значением  "{i}" должен быть меньше размера списка: {list[0]}')
-        break
-    else:
-        res *= list2[i]
-print(f'{res} - произведение заданных индексов')
+for i in list_positions:
+    res *= n_list[i]
+print(f'\n{res} - произведение заданных элементов')
 
-
-# Нужно исправить под задание с файлом!!!
+# в нашем случае N элемент - это максимальное значение индекса (8)
+# из файла позиций (Item positions.txt)
