@@ -4,10 +4,10 @@
 from math import ceil
 
 
-def Product_Nums(list1):
+def product_nums(list):
     product_list = []
-    for i in range(ceil(len(list1)/2)):
-        product = list1[i] * list1[len(list1) - i - 1]
+    for i in range(ceil(len(list)/2)):
+        product = list[i] * list[len(list) - i - 1]
         product_list.append(product)
     return product_list
 
@@ -15,4 +15,4 @@ def Product_Nums(list1):
 list_nums = [int(i) for i in input(
     'Введите список из нескольких чисел через пробел: ').split()]
 print(f'{list_nums} - получившийся список')
-print(f'{Product_Nums(list_nums)} - произведение пар чисел списка')
+print(f'{product_nums(list_nums)} - произведение пар чисел списка')
