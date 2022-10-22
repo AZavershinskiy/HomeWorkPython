@@ -4,10 +4,10 @@
 from math import ceil
 
 
-def product_nums(list):
+def product_nums(list1):
     product_list = []
-    for i in range(ceil(len(list)/2)):
-        product = list[i] * list[len(list) - i - 1]
+    for i in range(ceil(len(list1)/2)):
+        product = list1[i] * list1[len(list1) - i - 1]
         product_list.append(product)
     return product_list
 
