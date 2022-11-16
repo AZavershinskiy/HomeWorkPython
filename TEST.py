@@ -49,7 +49,6 @@
 # print(new_dict[0])  # -1
 
 
-
 # A[i] - 1 = A[i-1]
 # 1 2 3 4 5 6 8 9
 
@@ -67,10 +66,9 @@
 # print(list2[-1])  # 5
 
 
-
-# Задайте последовательность чисел. Напишите программу, 
-# которая выведет список неповторяющихся элементов 
-# исходной последовательности 
+# Задайте последовательность чисел. Напишите программу,
+# которая выведет список неповторяющихся элементов
+# исходной последовательности
 
 # from itertools import count
 
@@ -89,3 +87,27 @@
 # print(list1)  # ['Привет', 'мой', 'друг!', 'Как', 'поживваешь?']
 
 
+# data = {1, 9, 5, 7, 3, 5, 8, 1, 2}
+# print(data)
+
+
+import tkinter as tk
+ 
+window = tk.Tk()
+ 
+for i in range(3):
+    window.columnconfigure(i, weight=1, minsize=75)
+    window.rowconfigure(i, weight=1, minsize=50)
+ 
+    for j in range(0, 3):
+        frame = tk.Frame(
+            master=window,
+            relief=tk.RAISED,
+            borderwidth=1
+        )
+        frame.grid(row=i, column=j, padx=5, pady=5)
+ 
+        label = tk.Label(master=frame, text=f"Row {i}\nColumn {j}")
+        label.pack(padx=5, pady=5)
+ 
+window.mainloop()
